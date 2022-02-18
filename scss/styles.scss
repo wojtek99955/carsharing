@@ -1,0 +1,27 @@
+@import 'resets';
+@import 'variables';
+@import 'mixins';
+
+
+body{
+    font-family: Nunito Sans;
+}
+
+.container{
+    max-width: 1088px;
+
+    margin: auto;
+    @include xl{
+        padding: 0 15px;
+
+    }
+
+}
+
+@import 'header';
+@import 'opening';
+@import 'blog';
+@import 'service';
+@import 'contact';
+@import 'footer';
+

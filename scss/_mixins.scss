@@ -1,0 +1,39 @@
+@mixin xl {
+    @media (max-width: 1352px) {
+      @content;
+    }
+  }
+  
+  
+  @mixin lg {
+    @media (max-width: 992px) {
+      @content;
+    }
+  }
+  
+  @mixin md {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+
+  @mixin mobile-s{
+      @media (max-width:576px) {
+          @content
+      }
+  };
+
+  @mixin btn {
+    background-color: $baseColor;
+    color:white;
+    padding:12px 50px;
+    border-radius: 25px;
+    border: none;
+    text-transform: uppercase;
+
+    &:hover{
+        background-color: darken($baseColor, 20%);
+    }
+    
+}
+

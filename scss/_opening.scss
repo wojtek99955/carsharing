@@ -1,0 +1,146 @@
+
+.opening{
+    // background-image: url('../images/Image.jpg');
+    // // background-size: cover;
+    // width:100%;
+    height:100vh;
+    // background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background-color: black;
+    position:relative;
+    background-color: black;
+
+
+    &::before{
+        content: '';
+        position: absolute;
+        top:0;
+        right:0;
+        bottom:0;
+        left:0;
+        background-image: url('../images/Image.jpg');
+        background-size: cover;
+        opacity: 0.75;
+        height:100vh;
+
+    }
+    &::after{
+        content:'';
+        position:absolute;
+        background-image: url('../images/Icon\ Arrow\ Down.svg');
+        bottom:-30px;
+        width:60px;
+        height:60px;
+        background-color: $baseColor;
+        border-radius: 50%;
+        background-size:auto;
+        background-repeat: no-repeat;
+        background-position: center;
+
+
+
+
+    }
+}
+
+
+.opening-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.opening-description{
+    width:85%;
+    margin: auto;
+}
+
+.opening-title{
+    color:white;
+    font-size: 90px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    text-shadow: 0px 3px 6px #00000040;
+    font-family: Nunito Sans;
+
+    @include lg{
+        font-size: 80px;
+    }
+
+    @include md{
+        font-size: 65px;
+    }
+}
+
+.opening-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.opening-description{
+    color:white;
+    position: relative;
+    font-size: 17px;
+
+    @include md{
+        font-size: 15px;
+    }
+    
+
+}
+
+.opening-btns{
+    margin-top: 50px;
+    display: flex;
+    gap:40px;
+    position: relative;
+
+    @include mobile-s{
+        flex-direction: column;
+    }
+}
+
+.opening-btn{
+    @include btn();
+    padding:25px 68px;
+    border-radius: 32px;
+    font-size: 16px;
+    font-weight: bold;
+
+    @include lg{
+        padding: 20px 55px;
+    }
+
+    @include md{
+        padding: 14px 40px;
+    }
+}
+
+.opening-btn:first-child{
+    background-color: $baseColor;
+    color:white;
+    
+    &:hover{
+        @include btn();
+        padding:25px 68px;
+    border-radius: 32px;
+    }
+}
+
+.opening-btn:nth-child(2){
+    color:$baseColor;
+    background-color: white;
+
+    &:hover{
+        background-color:darken(#DEDEDE,40%);
+        color:white;
+    }
+
+
+}

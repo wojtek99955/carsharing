@@ -1,0 +1,154 @@
+.header{
+    background-color:rgba(0, 0, 0, 0.5);
+    width:100%;
+    position:fixed;
+    z-index: 2;
+
+        @include md{
+        padding: 15px 0;
+    }
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-wrapper{
+    display: flex;
+    gap:10px;
+
+    img{
+        width:25px;
+        @include mobile-s{
+        width:30px
+        }
+    }
+}
+
+.logo-text{
+    text-transform: uppercase;
+    color: white;
+    font-family: Nunito Sans;
+    font-size: 25px;
+
+    @include mobile-s{
+        display: none;
+    }
+
+    &:before{
+    content:"CAR";
+    color: $baseColor;
+    }
+    
+}
+
+
+.header-nav {
+
+    font-family: Nunito Sans;
+    padding: 20px 0;
+    align-self: flex-end;
+    
+    ul{
+        display: flex;
+        list-style: none;
+
+        a{
+        text-decoration: none;
+        color:white;
+        text-transform: uppercase;
+        font-size: 18px;
+        padding: 20px;
+
+        @include lg{
+            font-size: 15px;
+        }
+    
+            &:hover{
+                background-color: rgba(211,211,211,0.5);
+                cursor: pointer;
+            }
+        }
+    }
+
+}
+
+.hamburger{
+    display: none;
+}
+
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: white;
+    transition: 0.9s;
+    transform: translateY(-50%);
+    
+    
+}
+
+@media(max-width:768px){
+    
+    .hamburger{
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger.active .bar:nth-child(2){
+        transform: translateX(-100%);
+        opacity: 0;
+        transition:0.6s ease;
+        position:relative;
+    } 
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+        transition: 0.6s ease;
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+        transition:0.6s ease;
+    }
+
+    
+
+    .header-nav{
+        position: absolute;
+        background-color: rgba(0,0,0,0.90);
+        top: -1000%;
+        width:100%;
+        left:0;
+        padding: 50px 0; 
+        transition: 0.3s ease-in;
+        flex-direction: column;
+
+      ul{
+          flex-direction: column;
+          align-items: center;
+
+          li{
+              margin-bottom: 3rem;
+
+              &:last-child{
+                  margin-bottom: 0;
+              }
+          }
+
+          a{
+          font-size: 2.5rem;
+          color:white;
+         }
+      }
+
+      
+  }
+
+} 
+
+.header-nav.active{
+      position: absolute;
+      top: 0;
+  }

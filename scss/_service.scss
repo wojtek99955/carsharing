@@ -1,0 +1,114 @@
+.service{
+    background-color: #28272C;
+    padding: 60px 0;
+}
+.service img{
+    width:150px;
+    @include lg{
+        width: 130px;
+    }
+}
+
+.service-wrapper{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 25px;
+    justify-content: center;
+
+    @include lg{
+        grid-template-columns: repeat(2,1fr);
+        gap:100px;
+    }
+
+    @include mobile-s{
+        grid-template-columns: 300px;
+    }
+}
+
+
+
+.service-h2-container{
+    max-width: 320px;
+    margin: auto;
+
+
+    
+}
+
+.service h2{
+    color:white;
+    text-align:center;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 400;
+    position:relative;
+    margin-bottom: 60px;
+    
+
+    &::before{
+        content:'';
+        width: 60px;
+        height: 3px;
+        background-color: $baseColor;
+        position:absolute;
+        display: block;
+        top:50%;
+
+
+
+    }
+    &::after{
+        content:"";
+        width:60px;
+        height:3px;
+        background-color: $baseColor;
+        position: absolute;
+        display: block;
+        right:0;
+        top:50%
+    }
+
+}
+
+.service h3{
+    padding:20px 0;
+    color:white;
+    text-transform: uppercase;
+    font-size: 19px;
+    font-weight: 400;
+
+    @include lg{
+        font-size: 17px;
+    }
+    
+}
+
+.service p{
+    color:$greyTextService;
+    text-align: center;
+    font-size: 15px;
+
+    @include lg{
+        font-size: 15px;
+    }
+}
+.services{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.service button{
+    margin-top: 25px;
+    margin-bottom: 60px;
+    @include btn();
+
+    @include lg{
+        padding: 8px 20px;
+    }
+
+    @include mobile-s{
+        margin-bottom: 0px;
+    }
+}
